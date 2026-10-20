@@ -17,6 +17,12 @@ body{
     background-size: cover;
     font-family: 'Titillium Web', sans-serif;
 }
+.os-env{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+}
 .Menu_Bar{
     display: flex;
     align-items: center;
@@ -26,12 +32,26 @@ body{
     border: 1px solid black;
     border-radius: 10px;
     margin: 4px;
-    padding: 24px;
+    padding: 10px;
     width: 100%;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.2);
+    top: 0; 
+    left: 0;
+    height: 70px;
+    z-index: 999;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.245);
     backdrop-filter: blur(10px);
     color: white;
+}
+.desk-content{
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    height: calc(100% - 40px);
+    z-index: 11;
+    overflow: hidden;
 }
 .time-box{
     font-size: 20px;
@@ -39,4 +59,97 @@ body{
     background-color: rgba(256, 256, 256, 0.125);
     padding: 4px 12px;
     border-radius: 10px;
+}
+#mydiv {
+  position: absolute;
+  z-index: 9;
+  text-align: center;
+  background-color: rgba(256, 256, 256, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transform: translateZ(0);
+  will-change: backdrop-filter, background-color;
+
+  transition: backdrop-filter 0.3s ease, background-color 0.3s ease, -webkit-backdrop-filter 0.3s ease, border-radius 0.3s ease;
+}
+#mydiv:hover {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.123);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+#mydivheader {
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  gap: 8px;
+  margin: 0 auto;
+  filter: drop-shadow(0px 0px 8px black);
+}
+#mydivheader img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  
+}
+#mydivheader a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.windowpanel{
+    display: none;
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    width: 700px;
+    height: 450px;
+    background: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    z-index: 100;
+}
+.windowheader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    background: #2d2d2d;
+    height: 35px;
+    cursor: grab;
+}
+.windowheader:hover{
+   cursor: grabbing;
+}
+.windowtitle{
+    color: #fff;
+    font-size: 14px;
+}
+.window-close-button{
+    background: transparent;
+    border: none;
+    color: #aaa;
+    font-size: 20px;
+    cursor: pointer;
+}
+.window-close-button:hover{
+    color: #ff5d56;
+}
+.windowcontent{
+    width: 100%;
+    height: calc(100% - 35px);
+    background: #fff;
+}
+.windowcontent iframe{
+    width: 100%;
+    height: 100%;
 }
