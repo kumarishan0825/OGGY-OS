@@ -21,11 +21,13 @@
         </div>
     </header>
     <div class="desk-content" id="welcome">
-    <div id="mydiv">
-        <div id="mydivheader">
-            <a href="#"><img src="icons8-google-logo-48.png" alt="">Google</a>
+
+    <div id="mydiv" >
+        <div id="mydivheader" >
+            <img src="icons8-google-logo-48.png" alt="">
+            <span>Google</span>
         </div>
-        </div>
+    </div>
         
         <div id="googlewindow" class="windowpanel">
             <div id="googleheader" class="windowheader">
@@ -36,8 +38,78 @@
                 <iframe src="https://www.google.com/webhp?igu=1" frameborder="0"></iframe>
             </div>
         </div>
+    
 
+    <div id="mydiv2" >
+        <div id="mydivheader2" >
+            <img src="icons8-notes-100.png" alt="">
+            <span>Notes</span>
+        </div>
     </div>
+    
+        <div id="noteswindow" class="windowpanel">
+            <div id="notesheader" class="windowheader">
+                <div class="windowtitle">Notes</div>
+                <button class="window-close-button" id="notes-close-button">&times;</button>
+            </div>
+            <div class="windowcontent notepadbody">
+                <textarea id="notes-textarea" placeholder="Write your notes here..."></textarea>
+                <div class="notepad-footer">
+                    <button id="download-pdf" class="action-btn">Download Note as PDF</button>
+                </div>
+            </div>
+        </div>
+
+     <div id="mydiv3" >
+        <div id="mydivheader3" >
+            <img src="icons8-calculator-100.png" alt="">
+            <span>Calculator</span>
+        </div>
+    </div>
+    
+        <div id="calculatorwindow" class="windowpanel">
+            <div id="calculatorheader" class="windowheader">
+                <div class="windowtitle">Calculator</div>
+                <button class="window-close-button" id="calc-close-button">&times;</button>
+            </div>
+            <div class="windowcontent calcbody">
+                <div class="calculator">
+                    <input type="text" id="calc-screen" readonly value="0">
+                    <div class="calc-grid">
+                        <button class="calc-btn utility" onclick="clearScreen()">C</button>
+                        <button class="calc-btn utility" onclick="backspace()">&larr;</button>
+                        <button class="calc-btn utility" onclick="pressKey('%')">%</button>
+                        <button class="calc-btn operator" onclick="pressKey('/')">&divide;</button>
+                        
+                        <button class="calc-btn" onclick="pressKey('7')">7</button>
+                        <button class="calc-btn" onclick="pressKey('8')">8</button>
+                        <button class="calc-btn" onclick="pressKey('9')">9</button>
+                        <button class="calc-btn operator" onclick="pressKey('*')">&times;</button>
+                        
+                        <button class="calc-btn" onclick="pressKey('4')">4</button>
+                        <button class="calc-btn" onclick="pressKey('5')">5</button>
+                        <button class="calc-btn" onclick="pressKey('6')">6</button>
+                        <button class="calc-btn operator" onclick="pressKey('-')">&minus;</button>
+                        
+                        <button class="calc-btn" onclick="pressKey('1')">1</button>
+                        <button class="calc-btn" onclick="pressKey('2')">2</button>
+                        <button class="calc-btn" onclick="pressKey('3')">3</button>
+                        <button class="calc-btn operator" onclick="pressKey('+')">+</button>
+
+                        <button class="calc-btn zero" onclick="pressKey('0')">0</button>
+                        <button class="calc-btn" onclick="pressKey('.')">.</button>
+                        <button class="calc-btn operator" onclick="calculateResult()">=</button>
+
+                </div>
+            </div>
+        </div>   
+
+    
+
+
+
+
+
 </div>
     
     <script src="script.js"></script>

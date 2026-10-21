@@ -79,7 +79,7 @@ body{
     -webkit-backdrop-filter: blur(6px);
 }
 
-#mydivheader {
+#mydivheader{
   padding: 10px;
   cursor: pointer;
   z-index: 10;
@@ -99,10 +99,51 @@ body{
   object-fit: contain;
   
 }
-#mydivheader a {
-  text-decoration: none;
-  color: #fff;
+
+#mydiv2 {
+  position: absolute;
+  z-index: 9;
+  text-align: center;
+  top: 140px;
+  left: 20px;
+  background-color: rgba(256, 256, 256, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transform: translateZ(0);
+  will-change: backdrop-filter, background-color;
+
+  transition: backdrop-filter 0.3s ease, background-color 0.3s ease, -webkit-backdrop-filter 0.3s ease, border-radius 0.3s ease;
 }
+#mydiv2:hover {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.123);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+#mydivheader2 {
+
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  gap: 8px;
+  margin: 0 auto;
+  filter: drop-shadow(0px 0px 8px black);
+}
+#mydivheader2 img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  
+}
+
 
 .windowpanel{
     display: none;
@@ -152,4 +193,160 @@ body{
 .windowcontent iframe{
     width: 100%;
     height: 100%;
+}
+
+.notepadbody {
+    display: flex;
+    flex-direction: column;
+    background: #111111;
+
+}
+#notes-textarea{
+    flex: 1;
+    width: 100%;
+    height: calc(100% - 45px);
+
+    background: #151515;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    box-sizing: border-box;
+    font-family: monospace;
+    font-size: 14px;
+    resize: none;
+    outline: none;
+}
+.notepad-footer{
+    height: 45px;
+    background: #222222;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 15px;
+}
+.action-btn{
+    background: #4285F4;
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#mydiv3 {
+  position: absolute;
+  z-index: 9;
+  text-align: center;
+  top: 250px;
+  left: 20px;
+  background-color: rgba(256, 256, 256, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transform: translateZ(0);
+  will-change: backdrop-filter, background-color;
+
+  transition: backdrop-filter 0.3s ease, background-color 0.3s ease, -webkit-backdrop-filter 0.3s ease, border-radius 0.3s ease;
+}
+#mydiv3:hover {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.123);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+#mydivheader3 {
+
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  gap: 8px;
+  margin: 0 auto;
+  filter: drop-shadow(0px 0px 8px black);
+}
+#mydivheader3 img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  
+}
+#calculatorwindow{
+    width: 280px;
+    height: 250px;
+    background: #1e1e1e;
+}
+.calcbody{
+    background: #1e1e1e;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 35px);
+    box-sizing: border-box;
+}
+#calc-screen{
+    width: 100%;
+    height: 50px;
+    background: #111;
+    border: none;
+    border-radius:6px ;
+    color: #fff;
+    font-size: 24px;
+    text-align: right;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    outline: none;
+}
+.calc-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    flex: 1;
+}
+.calc-btn{
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.1s;
+}
+.calc-btn:hover{
+    background: #444;
+}
+.calc-btn:active{
+    background: #555;
+}
+.calc-btn.operator{
+    background: #f2a33c;
+    color: white;
+}
+.calc-btn.operator:hover{
+    background: #e0922b;
+}
+
+.calc-btn.utility{
+    background: #a5a5a5 ;
+    color: black;
+}
+.calc-btn.utility:hover{
+    background: #d4d4d4 ;
+}
+.calc-btn.zero{
+    grid-column: span 2;
+}
+.calc-btn.equal{
+    background: #4285F4;
+}
+.calc-btn.equal:hover{
+    background: #357ae8;
 }
