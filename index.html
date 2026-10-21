@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OGGY-OS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="os-env">
+    <header class="Header_Menu">
+        <div class="Menu_Bar">
+          
+            <h1 style="margin-left: 24px;" class="H1BOX">OGGY-OS</h1>
+            <p id="timeElement" class="time-box" style="margin-right: 24px;">
+                Time
+            </p>
+        </div>
+    </header>
+    <div class="desk-content" id="welcome">
+
+    <div id="mydiv" >
+        <div id="mydivheader" >
+            <img src="icons8-google-logo-48.png" alt="">
+            <span>Google</span>
+        </div>
+    </div>
+        
+        <div id="googlewindow" class="windowpanel">
+            <div id="googleheader" class="windowheader">
+                <div class="windowtitle">Google</div>
+                <button class="window-close-button" id="google-close-button">&times;</button>
+            </div>
+            <div class="windowcontent">
+                <iframe src="https://www.google.com/webhp?igu=1" frameborder="0"></iframe>
+            </div>
+        </div>
+    
+        
+        <div id="mydiv2" >
+            <div id="mydivheader2" >
+                <img src="icons8-notes-100.png" alt="">
+            <span>Notes</span>
+        </div>
+    </div>
+    
+        <div id="noteswindow" class="windowpanel">
+            <div id="notesheader" class="windowheader">
+                <div class="windowtitle">Notes</div>
+                <button class="window-close-button" id="notes-close-button">&times;</button>
+            </div>
+            <div class="windowcontent notepadbody">
+                <textarea id="notes-textarea" placeholder="Write your notes here..."></textarea>
+                <div class="notepad-footer">
+                    <button id="download-pdf" class="action-btn">Download Note as PDF</button>
+                </div>
+            </div>
+        </div>
+
+     <div id="mydiv3" >
+        <div id="mydivheader3" >
+            <img src="icons8-calculator-100.png" alt="">
+            <span>Calculator</span>
+        </div>
+    </div>
+    
+        <div id="calculatorwindow" class="windowpanel">
+            <div id="calculatorheader" class="windowheader">
+                <div class="windowtitle">Calculator</div>
+                <button class="window-close-button" id="calc-close-button">&times;</button>
+            </div>
+            <div class="windowcontent calcbody">
+                <div class="calculator">
+                    <input type="text" id="calc-screen" readonly value="0">
+                    <div class="calc-grid">
+                        <button class="calc-btn utility" onclick="clearScreen()">C</button>
+                        <button class="calc-btn utility" onclick="backspace()">&larr;</button>
+                        <button class="calc-btn utility" onclick="pressKey('%')">%</button>
+                        <button class="calc-btn operator" onclick="pressKey('/')">&divide;</button>
+                        
+                        <button class="calc-btn" onclick="pressKey('7')">7</button>
+                        <button class="calc-btn" onclick="pressKey('8')">8</button>
+                        <button class="calc-btn" onclick="pressKey('9')">9</button>
+                        <button class="calc-btn operator" onclick="pressKey('*')">&times;</button>
+                        
+                        <button class="calc-btn" onclick="pressKey('4')">4</button>
+                        <button class="calc-btn" onclick="pressKey('5')">5</button>
+                        <button class="calc-btn" onclick="pressKey('6')">6</button>
+                        <button class="calc-btn operator" onclick="pressKey('-')">&minus;</button>
+                        
+                        <button class="calc-btn" onclick="pressKey('1')">1</button>
+                        <button class="calc-btn" onclick="pressKey('2')">2</button>
+                        <button class="calc-btn" onclick="pressKey('3')">3</button>
+                        <button class="calc-btn operator" onclick="pressKey('+')">+</button>
+
+                        <button class="calc-btn zero" onclick="pressKey('0')">0</button>
+                        <button class="calc-btn" onclick="pressKey('.')">.</button>
+                        <button class="calc-btn operator" onclick="calculateResult()">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>   
+        
+    <div id="mydiv4">
+        <div id="mydivheader4">
+                <img src="icons8-command-prompt-100.png" alt="">
+                <span>Terminal</span>
+            </div>
+        </div>
+        <div id="cmdWindow" class="windowpanel">
+            <div id="cmdHeader" class="windowheader">
+                <div class="windowtitle">Command Prompt (CMD)</div>
+                <button class="window-close-button" id="cmd-close-button">&times;</button>
+            </div>
+            <div class="windowcontent cmd-body" onclick="cmdInput()">
+                <div id="cmd-output">
+                    <p>OGGY-OS [Version 1.0.0]</p>
+                    <p>(c) 2026 Made by Kumar Ishan (Isovoir).</p>
+                    <p>All rights reserved.</p>
+                    <p>Type <span class="highlight">"help"</span> to view available system instructions.</p>
+                    <br>
+                </div>
+                <div class="cmd-input-line">
+                    <span class="cmd-prompt">C:\Users\Oggy&gt;</span>
+                    <input type="text" id="cmd-input" autofocus autocomplete="off" spellcheck="false">
+                </div>
+            </div>
+        </div>
+
+        <div id="mydiv5" >
+            <div id="mydivheader5" >
+                <img src="icons8-oggy-48.png" alt="">
+                <span>Game</span>
+            </div>
+        </div>
+            
+            <div id="oggywindow" class="windowpanel">
+                <div id="oggyheader" class="windowheader">
+                    <div class="windowtitle">OGGY Moshi</div>
+                    <button class="window-close-button" id="oggy-close-button">&times;</button>
+                </div>
+                <div class="windowcontent">
+                    <iframe src="https://cartoongames.io/game/oggy-moshi" frameborder="0"></iframe>
+                </div>
+            </div>
+        
+    
+
+
+
+
+
+</div>
+    
+    <script src="script.js"></script>
+
+    <script>
+        function updateTime() {
+            var currentTime = new Date().toLocaleString();
+            var timeText = document.getElementById("timeElement");
+            timeText.innerHTML = currentTime;
+        }
+        setInterval(updateTime, 1000); 
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,501 @@
+
+html, body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url('wallpaper.jpg');
+    background-size: cover;
+    font-family: 'Titillium Web', sans-serif;
+}
+.os-env{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+}
+.Menu_Bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Header_Menu{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 4px;
+    padding: 10px;
+    width: 100%;
+    top: 0; 
+    left: 0;
+    height: 70px;
+    z-index: 999;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.245);
+    backdrop-filter: blur(10px);
+    color: white;
+}
+.desk-content{
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    height: calc(100% - 40px);
+    z-index: 11;
+    overflow: hidden;
+}
+.time-box{
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgba(256, 256, 256, 0.125);
+    padding: 4px 12px;
+    border-radius: 10px;
+}
+.H1BOX{
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgba(256, 256, 256, 0.125);
+    padding: 4px 12px;
+    border-radius: 10px;
+}
+#mydiv {
+  position: absolute;
+  z-index: 9;
+  text-align: center;
+  background-color: rgba(256, 256, 256, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transform: translateZ(0);
+  will-change: backdrop-filter, background-color;
+
+  transition: backdrop-filter 0.3s ease, background-color 0.3s ease, -webkit-backdrop-filter 0.3s ease, border-radius 0.3s ease;
+}
+#mydiv:hover {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.123);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+#mydivheader{
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  gap: 8px;
+  margin: 0 auto;
+  filter: drop-shadow(0px 0px 8px black);
+}
+#mydivheader img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  
+}
+
+#mydiv2 {
+  position: absolute;
+  z-index: 9;
+  text-align: center;
+  top: 140px;
+  left: 20px;
+  background-color: rgba(256, 256, 256, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transform: translateZ(0);
+  will-change: backdrop-filter, background-color;
+
+  transition: backdrop-filter 0.3s ease, background-color 0.3s ease, -webkit-backdrop-filter 0.3s ease, border-radius 0.3s ease;
+}
+#mydiv2:hover {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.123);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+#mydivheader2 {
+
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  gap: 8px;
+  margin: 0 auto;
+  filter: drop-shadow(0px 0px 8px black);
+}
+#mydivheader2 img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  
+}
+
+
+.windowpanel{
+    display: none;
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    width: 700px;
+    height: 450px;
+    background: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    z-index: 100;
+}
+.windowheader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    background: #2d2d2d;
+    height: 35px;
+    cursor: grab;
+}
+.windowheader:hover{
+   cursor: grabbing;
+}
+.windowtitle{
+    color: #fff;
+    font-size: 14px;
+}
+.window-close-button{
+    background: transparent;
+    border: none;
+    color: #aaa;
+    font-size: 20px;
+    cursor: pointer;
+}
+.window-close-button:hover{
+    color: #ff5d56;
+}
+.windowcontent{
+    width: 100%;
+    height: calc(100% - 35px);
+    background: #fff;
+}
+.windowcontent iframe{
+    width: 100%;
+    height: 100%;
+}
+
+.notepadbody {
+    display: flex;
+    flex-direction: column;
+    background: #111111;
+
+}
+#notes-textarea{
+    flex: 1;
+    width: 100%;
+    height: calc(100% - 45px);
+
+    background: #151515;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    box-sizing: border-box;
+    font-family: monospace;
+    font-size: 14px;
+    resize: none;
+    outline: none;
+}
+.notepad-footer{
+    height: 45px;
+    background: #222222;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 15px;
+}
+.action-btn{
+    background: #4285F4;
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#mydiv3 {
+  position: absolute;
+  z-index: 9;
+  text-align: center;
+  top: 250px;
+  left: 20px;
+  background-color: rgba(256, 256, 256, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transform: translateZ(0);
+  will-change: backdrop-filter, background-color;
+
+  transition: backdrop-filter 0.3s ease, background-color 0.3s ease, -webkit-backdrop-filter 0.3s ease, border-radius 0.3s ease;
+}
+#mydiv3:hover {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.123);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+#mydivheader3 {
+
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  gap: 8px;
+  margin: 0 auto;
+  filter: drop-shadow(0px 0px 8px black);
+}
+#mydivheader3 img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  
+}
+#calculatorwindow{
+    width: 280px;
+    height: 250px;
+    background: #1e1e1e;
+}
+.calcbody{
+    background: #1e1e1e;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 35px);
+    box-sizing: border-box;
+}
+#calc-screen{
+    width: 100%;
+    height: 50px;
+    background: #111;
+    border: none;
+    border-radius:6px ;
+    color: #fff;
+    font-size: 24px;
+    text-align: right;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    outline: none;
+}
+.calc-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    flex: 1;
+}
+.calc-btn{
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.1s;
+}
+.calc-btn:hover{
+    background: #444;
+}
+.calc-btn:active{
+    background: #555;
+}
+.calc-btn.operator{
+    background: #f2a33c;
+    color: white;
+}
+.calc-btn.operator:hover{
+    background: #e0922b;
+}
+
+.calc-btn.utility{
+    background: #a5a5a5 ;
+    color: black;
+}
+.calc-btn.utility:hover{
+    background: #d4d4d4 ;
+}
+.calc-btn.zero{
+    grid-column: span 2;
+}
+.calc-btn.equal{
+    background: #4285F4;
+}
+.calc-btn.equal:hover{
+    background: #357ae8;
+}
+#mydiv4 {
+  position: absolute;
+  z-index: 9;
+  text-align: center;
+  top: 360px;
+  left: 20px;
+  background-color: rgba(256, 256, 256, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transform: translateZ(0);
+  will-change: backdrop-filter, background-color;
+
+  transition: backdrop-filter 0.3s ease, background-color 0.3s ease, -webkit-backdrop-filter 0.3s ease, border-radius 0.3s ease;
+}
+#mydiv4:hover {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.123);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+#mydivheader4 {
+
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  gap: 8px;
+  margin: 0 auto;
+  filter: drop-shadow(0px 0px 8px black);
+}
+#mydivheader4 img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  
+}
+
+#cmdWindow{
+    width: 600px;
+    height: 380px;
+    background: #0C0C0C;
+}
+.cmd-body {
+    background: #0C0C0C;
+    color: #00ff00;
+    font-family: 'Consolas' , 'Courier New' , monospace;
+    font-size: 14px;
+    padding: 12px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: calc(100% - 35px);
+    display: flex;
+    flex-direction: column;
+}
+#cmd-output{
+    margin: 3px 0;
+    line-break: 1.4;
+}
+.highlight{
+    color: #ffffff;
+    font-weight: bold;
+}
+.system-msg{
+    color: #00bfff;
+}
+.error-msg{
+    color: #ff3333;
+}
+.cmd-input-line{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+}
+.cmd-prompt{
+    color: #ffffff;
+    white-space: nowrap;
+    margin-right: 8px;
+}
+#cmd-input{
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #00ff00;
+    font-family: 'Consolas' , 'Courier New' , monospace;
+    font-size: 14px;
+    outline: none;
+    padding: 0;
+    margin: 0;    
+}
+
+
+    #mydiv5 {
+      position: absolute;
+      z-index: 9;
+      text-align: center;
+      top: 470px;
+      left: 20px;
+      background-color: rgba(256, 256, 256, 0);
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+      transform: translateZ(0);
+      will-change: backdrop-filter, background-color;
+    
+      transition: backdrop-filter 0.3s ease, background-color 0.3s ease, -webkit-backdrop-filter 0.3s ease, border-radius 0.3s ease;
+    }
+    #mydiv5:hover {
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.123);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+    }
+    
+    #mydivheader5 {
+    
+      position: relative;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 76px;
+      gap: 8px;
+      margin: 0 auto;
+      filter: drop-shadow(0px 0px 8px black);
+    }
+    #mydivheader5 img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      
+    }
