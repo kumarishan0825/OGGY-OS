@@ -27,7 +27,9 @@
                     <button data-wall="oggy">Oggy</button>
                     <button data-wall="night">Night</button>
                     <button data-wall="sunny">Sunny</button>
+                    <button data-wall="aurora">Aurora</button>
                 </div>
+                <label  class="c-check"><input type="checkbox" id="animToggle" checked>Animate Wallpaper</label>
                 <input type="file" id="wallFile" accept="image/*">
             </div>
 
@@ -206,7 +208,7 @@ function updateTime() {
     const box = document.getElementById('secToggle');
     const opts = {
         weekday: 'short', day: 'numeric', month: 'short',
-        hour: '2-digit', minute: '2-digit',
+        hour: '2-digit', minute: '2-digit', 
         hour12: settings.clock === '12'
     };
     if (box && box.checked) opts.second = '2-digit';
@@ -220,3 +222,4 @@ setInterval(updateTime, 1000);
     
 </body>
 </html>
+

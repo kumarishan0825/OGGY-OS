@@ -97,8 +97,13 @@ document.getElementById('resetCustom').addEventListener('click', () => {
     localStorage.removeItem('oggyos.settings');
     localStorage.removeItem('oggyos.customWall');
     localStorage.removeItem('oggyos.seconds');
-document.getElementById('secToggle').checked = false;
-updateTime();
+    document.getElementById('secToggle').checked = false;
+    updateTime();
+    localStorage.removeItem('oggyos.still');
+    animBox.checked = true;
+    document.body.classList.remove('still');
+
+
     applySettings();
 });
 
@@ -110,4 +115,13 @@ secBox.checked = localStorage.getItem('oggyos.seconds') === '1';
 secBox.addEventListener('change', () => {
     localStorage.setItem('oggyos.seconds', secBox.checked ? '1' : '0');
     updateTime();                                                 
+});
+
+const animBox = document.getElementById('animToggle');
+animBox.checked = localStorage.getItem('oggyos.still') !== '1';
+document.body.classList.toggle('still', !animBox.checked);
+
+animBox.addEventListener('change', () => {
+    localStorage.setItem('oggyos.still', animBox.checked ? '0' : '1');
+    document.body.classList.toggle('still', !animBox.checked);
 });

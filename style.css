@@ -575,6 +575,45 @@ body{
 .c-row input[type="color"]{ width: 100%; height: 32px; border: none; background: none; cursor: pointer; }
 .c-row input[type="range"]{ width: 100%; accent-color: var(--accent); }
 
-/* wallpaper presets, chosen by data-wall on <body> */
-body[data-wall="night"]{ background-image: linear-gradient(135deg, #0f2027, #203a43, #2c5364); }
-body[data-wall="sunny"]{ background-image: linear-gradient(135deg, #f6d365, #fda085); }
+@keyframes wallShift {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+    
+}
+
+body[data-wall = "night"]{
+    background-image: linear-gradient(135deg, #0f2027, #203a43, #2c5364, #1b1464, #0f2027);
+    background-size: 400% 400%;
+    animation: wallShift 20s ease infinite;
+}
+body[data-wall = "sunny"]{
+    background-image: linear-gradient(135deg, #f6d365, #fda085, #f093fb, #fda085, #f6d365);
+    background-size: 400% 400%;
+    animation: wallShift 16s ease infinite;
+}
+body[data-wall = "aurora"]{
+    background-color: #0b1020;
+    background-image:
+    radial-gradient(circle at 20% 30%, color-mix(in srgb, var(--accent) 75%, transparent), transparent 45%),
+    radial-gradient(circle at 80% 25%, rgba(168, 85, 247, 0.7), transparent 45%),
+    radial-gradient(circle at 55% 85%, rgba(34, 211, 238, 0.65), transparent 50%);
+
+    background-size: 200% 200%;
+    animation: wallShift 22s ease-in-out infinite;
+}
+
+body.still{
+    animation: none !important;
+}
+@media (prefers-reduced-motion: reduce){
+    body[data-wall]{
+        animation: none;
+    }
+}
