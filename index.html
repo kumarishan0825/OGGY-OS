@@ -15,6 +15,48 @@
         <div class="Menu_Bar">
           
             <h1 style="margin-left: 24px;" class="H1BOX">OGGY-OS</h1>
+                <div class="custom-widget">
+        <button id="customBtn" class="custom-btn">⚙ Customize</button>
+
+        <div id="customPanel" class="custom-panel">
+            <h2>Customize OGGY-OS</h2>
+
+            <div class="c-row">
+                <label>Wallpaper</label>
+                <div class="c-opts">
+                    <button data-wall="oggy">Oggy</button>
+                    <button data-wall="night">Night</button>
+                    <button data-wall="sunny">Sunny</button>
+                </div>
+                <input type="file" id="wallFile" accept="image/*">
+            </div>
+
+            <div class="c-row">
+                <label for="accentPick">Accent colour</label>
+                <input type="color" id="accentPick" value="#4285F4">
+            </div>
+
+            <div class="c-row">
+                <label for="blurRange">Glass blur</label>
+                <input type="range" id="blurRange" min="0" max="30" value="10">
+            </div>
+
+            <div class="c-row">
+                <label>Clock</label>
+                <div class="c-opts">
+                    <button data-clock="12">12h</button>
+                    <button data-clock="24">24h</button>
+                </div>
+                <label class="c-check"><input type="checkbox" id="secToggle"> Show seconds</label>
+            </div>
+
+            <button id="resetCustom" class="c-reset">Reset to default</button>
+        </div>
+    </div>
+            
+
+
+
             <p id="timeElement" class="time-box" style="margin-right: 24px;">
                 Time
             </p>
@@ -157,15 +199,23 @@
     
     <script src="script.js"></script>
     <script src="dock.js"></script>
+    <script src="custom.jS"></script>
 
     <script>
-        function updateTime() {
-            var currentTime = new Date().toLocaleString();
-            var timeText = document.getElementById("timeElement");
-            timeText.innerHTML = currentTime;
-        }
-        setInterval(updateTime, 1000); 
+function updateTime() {
+    const box = document.getElementById('secToggle');
+    const opts = {
+        weekday: 'short', day: 'numeric', month: 'short',
+        hour: '2-digit', minute: '2-digit',
+        hour12: settings.clock === '12'
+    };
+    if (box && box.checked) opts.second = '2-digit';
+    document.getElementById('timeElement').textContent =
+        new Date().toLocaleString([], opts);
+}
 
+updateTime();                     
+setInterval(updateTime, 1000);    
     </script>
     
 </body>

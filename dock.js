@@ -5,6 +5,7 @@
         ['calculatorwindow','Calculator', 'icons8-calculator-100.png'],
         ['cmdWindow', 'Terminal', 'icons8-command-prompt-100.png'],
         ['oggywindow', 'Oggy Game', 'icons8-oggy-48.png'],
+        // ['cyberwindow', 'CyberLab', 'icons8-cybersecurity-100.png'],   
     ];
 
 
