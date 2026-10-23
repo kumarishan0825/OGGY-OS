@@ -198,10 +198,52 @@
 
 
 </div>
+
+<button id="newsHandle" class="news-handle" aria-label="Open news panel" aria-expanded="false">&raquo;</button>
+
+<aside id="newsPanel" class="news-panel" aria-hidden="true">
+    <div class="news-top">
+        <div>
+            <h2>Today</h2>
+            <p id="newsDate" class="news-sub"></p>
+        </div>
+        <div class="news-actions">
+            <button id="newsRefresh" class="news-icon" aria-label="Refresh">&#8635;</button>
+            <button id="newsClose" class="news-icon" aria-label="Close">&times;</button>
+        </div>
+    </div>
+
+    <select id="newsRegion" class="news-select" aria-label="Region">
+        <option value="IN">🇮🇳 India</option>
+        <option value="US">🇺🇸 United States</option>
+        <option value="GB">🇬🇧 United Kingdom</option>
+        <option value="AU">🇦🇺 Australia</option>
+        <option value="CA">🇨🇦 Canada</option>
+    </select>
+
+    <div class="news-tabs">
+        <button class="on" data-ntab="news">News</button>
+        <button data-ntab="markets">Markets</button>
+    </div>
+
+    <div id="newsList" class="news-list"></div>
+    <div id="marketList" class="news-list" hidden></div>
+</aside>
+
+
+
+
+
+
+
+
+
+
     
     <script src="script.js"></script>
     <script src="dock.js"></script>
     <script src="custom.js"></script>
+    <script src="news.js"></script>
 
     <script>
 function updateTime() {
@@ -222,4 +264,3 @@ setInterval(updateTime, 1000);
     
 </body>
 </html>
-

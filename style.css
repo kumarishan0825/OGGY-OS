@@ -617,3 +617,253 @@ body.still{
         animation: none;
     }
 }
+
+
+:root{ --news-w: clamp(320px, 25vw, 440px); }  
+body{ touch-action: pan-y; }                   
+
+.news-handle{
+    position: fixed;
+    left: 14px;
+    bottom: 20px;
+    width: 46px;
+    height: 46px;
+    z-index: 950;
+    border-radius: 16px;                        
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(var(--blur, 10px));
+    -webkit-backdrop-filter: blur(var(--blur, 10px));
+    box-shadow: inset 0 -3px 0 var(--accent), 0 8px 24px rgba(0, 0, 0, 0.35);
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: left 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.2s ease, background 0.2s ease;
+}
+.news-handle:hover{
+     background: rgba(255, 255, 255, 0.26);
+      transform: scale(1.08);
+     }
+.news-handle.open{
+     left: calc(var(--news-w) + 24px); 
+    }
+
+.news-panel{
+    position: fixed;
+    top: 86px;
+    bottom: 12px;
+    left: 12px;
+    width: var(--news-w);
+    z-index: 960;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    color: #fff;
+    touch-action: pan-y;
+    border-radius: 24px;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.06));
+    backdrop-filter: blur(calc(var(--blur, 10px) + 8px)) saturate(160%);
+    -webkit-backdrop-filter: blur(calc(var(--blur, 10px) + 8px)) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 2px solid var(--accent);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: translateX(calc(-100% - 30px)); 
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease, visibility 0.45s;
+}
+.news-panel.open{
+     transform: none;
+      opacity: 1;
+       visibility: visible;
+     }
+
+.news-top{ 
+    display: flex;
+     justify-content: space-between;
+      align-items: flex-start; 
+    }
+.news-top h2{ 
+    font-size: 24px; 
+}
+.news-sub{ 
+    font-size: 13px;
+     opacity: 0.7;
+      margin-top: 2px; 
+    }
+.news-actions{ 
+    display: flex; 
+    gap: 6px;
+ }
+.news-icon{
+    width: 34px; 
+    height: 34px; 
+    border-radius: 12px;
+     border: none;
+      cursor: pointer;
+    background: rgba(255, 255, 255, 0.14);
+     color: #fff;
+      font-size: 18px;
+    transition: background 0.2s ease, transform 0.3s ease;
+}
+.news-icon:hover{ 
+    background: rgba(255, 255, 255, 0.28);
+    transform: rotate(40deg);
+ }
+#newsClose{
+    display: none; 
+}                   
+
+.news-select{
+    font-family: inherit;
+     color: #fff;
+      padding: 8px 10px; 
+      border-radius: 12px;
+       outline: none;
+    background: rgba(0, 0, 0, 0.25);
+     border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.news-select option{
+     color: #000; 
+    }
+
+.news-tabs{ 
+    display: flex;
+    gap: 6px; 
+    padding: 4px; 
+    border-radius: 14px; 
+    background: rgba(0, 0, 0, 0.25); 
+}
+.news-tabs button{
+    flex: 1;
+     border: none;
+      border-radius: 10px; 
+      padding: 7px; 
+      cursor: pointer;
+    font-family: inherit; 
+    font-weight: bold; 
+    color: #fff; 
+    background: none;
+     transition: background 0.25s ease;
+}
+.news-tabs button.on{
+     background: var(--accent); 
+    }
+
+.news-list{
+    flex: 1; 
+    min-height: 0;
+     overflow-y: auto; 
+     display: flex;
+     flex-direction: column;
+      gap: 10px;
+    padding-right: 4px;
+     scrollbar-width: thin; 
+     scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+.news-list[hidden]{ 
+    display: none;
+ }
+
+.news-card{
+    display: block;
+     padding: 12px 14px;
+      border-radius: 16px;
+       color: #fff;
+        text-decoration: none;
+    background: rgba(255, 255, 255, 0.08); 
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    animation: newsIn 0.4s ease backwards; 
+    animation-delay: calc(var(--i) * 40ms);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+.news-card:hover{ 
+    background: rgba(255, 255, 255, 0.18);
+     transform: translateY(-2px); 
+    }
+.news-card h3{
+     font-size: 14px; 
+     font-weight: 600; 
+     line-height: 1.35; 
+    }
+.news-meta{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 8px; 
+    font-size: 12px; 
+    opacity: 0.85;
+ }
+.news-src{
+     padding: 2px 9px; 
+     border-radius: 20px; 
+     background: color-mix(in srgb, var(--accent) 50%, transparent);
+     }
+
+.mkt-card{ 
+    display: flex;
+     justify-content: space-between; 
+     align-items: center; 
+    }
+.mkt-name b{
+     display: block; 
+     font-size: 15px;
+     }
+.mkt-name span{
+     font-size: 12px;
+      opacity: 0.7;
+     }
+.mkt-price{
+     text-align: right;
+      font-weight: bold; 
+    }
+.mkt-chg{
+     display: inline-block;
+      margin-top: 3px; 
+      padding: 1px 8px; 
+      border-radius: 20px; 
+      font-size: 12px; 
+    }
+.mkt-chg.up{ 
+    background: rgba(63, 185, 80, 0.35);
+ }
+.mkt-chg.down{ 
+    background: rgba(248, 81, 73, 0.35); 
+}
+.news-note{ 
+    font-size: 12px;
+     opacity: 0.65; 
+     text-align: center; 
+     padding: 6px;
+     }
+
+.news-skel{
+    height: 74px;
+     border-radius: 16px;
+      flex: none;
+    background: linear-gradient(90deg, rgba(255,255,255,.06), rgba(255,255,255,.16), rgba(255,255,255,.06));
+    background-size: 200% 100%; animation: shimmer 1.2s linear infinite;
+}
+@keyframes newsIn{
+     from{ opacity: 0; 
+        transform: translateY(10px); 
+    } }
+@keyframes shimmer{
+     to{
+         background-position: -200% 0; 
+        } }
+
+@media (max-width: 700px){
+    :root{ --news-w: calc(100vw - 24px); }
+    .news-handle.open{ display: none; }
+    #newsClose{ display: block; }
+}
+@media (prefers-reduced-motion: reduce){
+    .news-panel, .news-handle, .news-card{ transition: none; animation: none; }
+}
+
+
+
+
