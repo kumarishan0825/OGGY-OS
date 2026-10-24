@@ -231,7 +231,40 @@
 </aside>
 
 
+<button id="earthHandle" class="earth-handle" aria-label="Open Earth panel" aria-expanded="false">
+    <span class="eh-icon">🌏</span><span class="eh-arrow">&lsaquo;</span>
+</button>
 
+<aside id="earthPanel" class="earth-panel" aria-hidden="true">
+    <div class="earth-top">
+        <div>
+            <h2>Earth</h2>
+            <p id="earthSub" class="news-sub">Tap the map to drop a pin</p>
+        </div>
+        <button id="earthClose" class="news-icon" aria-label="Close">&times;</button>
+    </div>
+    <form id="earthSearch" class="earth-search">
+        <input placeholder="Search a place, or type lat, lng" autocomplete="off" id="earthQ">
+        <button type="submit" class="news-icon" aria-label="Search">&#8981;</button>
+    </form>
+    <div class="earth-map-wrap">
+        <div id="earthMap"></div>
+        <div class="earth-tools">
+            <button id="earthLocate" class="news-icon" title="My Location">&#9678;</button>
+            <button id="earthLayer" class="news-icon" title="Satellite / Street">🗺️</button>
+        </div>
+    </div>
+    <div class="earth-readout">
+        <div class="coord"><span>LATITUDE</span><b id="eLat">---</b></div>
+        <div class="coord"><span>LONGITUDE</span><b id="eLng">---</b></div>
+    </div>
+
+    <div class="earth-actions">
+        <a href="" id="eEarth" class="earth-btn main" href="https://earth.google.com/web/" target="_blank" rel="noopener noreferrer">Open in Google Earth ↗</a>
+        <a href="" id="eMaps" class="earth-btn " href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Maps ↗</a>
+        <button id="eCopy" class="earth-btn" type="button">Copy</button>
+    </div>
+</aside>
 
 
 
@@ -244,6 +277,7 @@
     <script src="dock.js"></script>
     <script src="custom.js"></script>
     <script src="news.js"></script>
+    <script src="maps.js"></script>
 
     <script>
 function updateTime() {

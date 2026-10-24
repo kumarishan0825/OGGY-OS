@@ -270,6 +270,13 @@ Available internal execution routines for Oggy-OS shell context loops:<br>
 Platform Core Environment Specification: HTML5, CSS3 Fluid Grids & Native Vanilla JavaScript API.<br>
 Systems Layer Status: Operational Framework Online.<br>
 Developed by: Kumar Ishan (IsoVoir).`;
+
+    case "kuchupuchu":
+      systemReply.innerHTML = `
+<span class="system-msg">--- I LOVE YOU SO MUCH SWEETHEART (SHREYA) ---</span><br>
+Yaar mai tumhe kaafi miss krta hu aur bari yaad aati ho hmko to isi baat me<br>
+Yaha mai kehna chahta hu ki, Will you be my forever one 💖.<br>
+---- Ishan.`;
       break;
       
     default:
