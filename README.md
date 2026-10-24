@@ -8,7 +8,7 @@ A web-based desktop OS themed around *Oggy and the Cockroaches*, built with plai
 
 # Overview
 
-[]
+[Overview of OGGY-OS](img/intro.png)
 
 ---
 
