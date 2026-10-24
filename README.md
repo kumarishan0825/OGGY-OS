@@ -38,6 +38,13 @@ A web-based desktop OS themed around *Oggy and the Cockroaches*, built with plai
 - Search a place or type coordinates, use your current location, and switch between satellite and street views
 - Copy coordinates, or open the same spot in **Google Earth** or Google Maps
 
+  **Music player** (floating, draggable widget)
+- **📻 Radio mode:** thousands of live internet radio stations, searchable by name, genre or country
+- **🎵 Songs mode:** search any song or artist, **shuffle**, "Surprise me", next/previous and a seek bar
+- Favourites, sleep timer, volume memory and media-key support
+- Opens upward or downward depending on the room available, and remembers where you left it
+
+
 **Apps**
 - Notes with PDF export
 - Calculator
@@ -58,13 +65,15 @@ No frameworks, no build step, and no API keys. Everything runs in the browser.
 ## Credits
 Icons by [Icons8](https://icons8.com). Oggy and the Cockroaches © Xilam Animation (fan project, no affiliation). Fonts by [Google Fonts](https://fonts.google.com/). Website features by [w3schools](https://www.w3schools.com/howto/howto_js_draggable.asp), Dock design learned and inspired by [CodeGrid](https://www.youtube.com/watch?v=_Y1REGc1O5U), Oggy Games I took By [Oggy Moshi](https://cartoongames.io/game/oggy-moshi).Untouched by AI, Pure coding and watching tutorials and learning about These things with a book I bought called "Mastering HTML,CSS, and JS "by Lenmay,Colbum,Kymin
 **Data and services (free, no API keys)**
-News: [GDELT Project](https://www.gdeltproject.org/) and Google News RSS (via [rss2json](https://rss2json.com/))
-Crypto prices: [CoinGecko](https://www.coingecko.com/)
-Map library: [Leaflet](https://leafletjs.com/)
-Satellite imagery: Tiles © Esri, Maxar, Earthstar Geographics
-Street map: © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors
-Place search: [Nominatim](https://nominatim.org/)
-Open in Google Earth" and "Maps" buttons link to Google Earth and Google Maps (opened in a new tab; not embedded)
+News: [GDELT Project](https://www.gdeltproject.org/) and Google News RSS (via [rss2json](https://rss2json.com/)) ;
+Crypto prices: [CoinGecko](https://www.coingecko.com/) ;
+Map library: [Leaflet](https://leafletjs.com/) ;
+Satellite imagery: Tiles © Esri, Maxar, Earthstar Geographics ;
+Street map: © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors ;
+Place search: [Nominatim](https://nominatim.org/) ;
+Open in Google Earth" and "Maps" buttons link to Google Earth and Google Maps (opened in a new tab; not embedded) ;
+Radio stations: [Radio Browser](https://www.radio-browser.info/) community directory (streams belong to their stations)
+Songs: [Audius](https://audius.co/) (full tracks; all rights belong to the artists) and the iTunes Search API (30-second previews, © Apple and the respective rights holders)
 
 ---
 
