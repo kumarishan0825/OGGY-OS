@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OGGY-OS</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="music-player/player.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
@@ -266,9 +267,47 @@
     </div>
 </aside>
 
+<!-- ===== MUSIC PLAYER START ===== -->
+<div id="radio" class="radio up" data-mode="radio" role="region" aria-label="Music player">
+    <div class="rd-bar" id="rdGrip">
+        <div class="rd-eq" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="rd-now"><b id="rdName">Oggy Radio</b><span id="rdSub">Pick a station</span></div>
+        <button id="rdNext" class="rd-btn song-only" aria-label="Next song">&#9197;</button>
+        <button id="rdPlay" class="rd-btn rd-main" aria-label="Play or pause">&#9654;</button>
+        <button id="rdFold" class="rd-btn" aria-label="Expand or collapse">&#8963;</button>
+    </div>
 
+    <div class="rd-body"><div class="rd-inner">
+        <div class="rd-modes" id="rdModes">
+            <button data-mode="radio" class="on">📻 Radio</button>
+            <button data-mode="song">🎵 Songs</button>
+        </div>
 
+        <form id="rdForm" class="rd-search">
+            <input id="rdQ" placeholder="Search stations, genres..." autocomplete="off">
+            <button class="rd-btn" aria-label="Search">&#8981;</button>
+        </form>
 
+        <div class="rd-chips" id="rdChips"></div>
+        <div class="rd-list" id="rdList"></div>
+
+        <div class="rd-seek song-only">
+            <span id="rdT">0:00</span>
+            <input type="range" id="rdSeek" min="0" max="100" value="0" step="0.1" aria-label="Seek">
+            <span id="rdD">0:00</span>
+        </div>
+
+        <div class="rd-foot">
+            <span>🔈</span>
+            <input type="range" id="rdVol" min="0" max="1" step="0.01" value="0.7" aria-label="Volume">
+            <button id="rdFav" class="rd-btn" aria-label="Favorite">&#9825;</button>
+            <button id="rdShuf" class="rd-btn song-only" aria-pressed="false" title="Shuffle">🔀</button>
+            <button id="rdSleep" class="rd-btn rd-wide">⏾ Off</button>
+        </div>
+    </div></div>
+
+    <audio id="rdAudio" preload="none"></audio>
+</div>
 
 
 
@@ -278,6 +317,7 @@
     <script src="custom.js"></script>
     <script src="news.js"></script>
     <script src="maps.js"></script>
+    <script src="music-player/music.js"></script>
 
     <script>
 function updateTime() {

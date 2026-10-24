@@ -1,4 +1,4 @@
-/* ---------- Earth panel ---------- */
+
 const earthPanel  = document.getElementById('earthPanel');
 const earthHandle = document.getElementById('earthHandle');
 const earthSub    = document.getElementById('earthSub');
@@ -6,7 +6,6 @@ const EARTH_START = { IN: [22.6, 79.0, 4], US: [39.8, -98.6, 4], GB: [54.3, -2.5
 let earthMap = null, earthPin = null, earthCur = null, earthSat = true, earthLoading = null;
 const earthLayers = {};
 
-/* Leaflet is loaded only the first time the panel opens, so the page starts fast */
 function loadLeaflet() {
     if (window.L) return Promise.resolve();
     if (earthLoading) return earthLoading;
@@ -30,10 +29,9 @@ function paintCoords(lat, lng) {
     document.getElementById('eLng').textContent = fmtCoord(lng);
 }
 
-/* the pin: updates the numbers and the Google Earth / Maps links */
 function setPin(lat, lng, zoomTo) {
     lat = Math.max(-90, Math.min(90, lat));
-    lng = ((lng + 540) % 360) - 180;                       // keep longitude in -180..180
+    lng = ((lng + 540) % 360) - 180;                  
     earthCur = { lat, lng };
     paintCoords(lat, lng);
     document.getElementById('eEarth').href = `https://earth.google.com/web/@${lat},${lng},0a,1500d,35y,0h,0t,0r`;
@@ -81,7 +79,6 @@ earthHandle.addEventListener('click', () => setEarth(!earthPanel.classList.conta
 document.getElementById('earthClose').addEventListener('click', () => setEarth(false));
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setEarth(false); });
 
-/* swipe: left from the right edge opens, right on the panel (not the map) closes */
 let ex = 0, ey = 0, eTrack = false, eInPanel = false;
 document.addEventListener('pointerdown', (e) => {
     ex = e.clientX; ey = e.clientY; eTrack = true;
@@ -96,7 +93,7 @@ document.addEventListener('pointerup', (e) => {
     else if (eInPanel && dx > 70) setEarth(false);
 });
 
-/* search: a place name, or coordinates like "28.61, 77.21" */
+
 async function earthSearch(q) {
     const m = q.match(/^\s*(-?\d+(?:\.\d+)?)\s*[, ]\s*(-?\d+(?:\.\d+)?)\s*$/);
     if (m) {
@@ -119,7 +116,7 @@ document.getElementById('earthSearch').addEventListener('submit', (e) => {
     if (q && earthMap) earthSearch(q);
 });
 
-/* my location, satellite/street toggle, copy */
+
 document.getElementById('earthLocate').addEventListener('click', () => {
     if (!earthMap || !navigator.geolocation) { earthSub.textContent = 'Location is not available'; return; }
     earthSub.textContent = 'Finding you…';
@@ -142,4 +139,4 @@ document.getElementById('eCopy').addEventListener('click', (e) => {
         e.currentTarget.textContent = 'Copied ✓';
         setTimeout(() => e.currentTarget.textContent = 'Copy', 1200);
     });
-}) 
+})
