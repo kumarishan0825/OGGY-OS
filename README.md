@@ -9,12 +9,12 @@ A web-based desktop OS themed around *Oggy and the Cockroaches*, built with plai
 ## Features
 **Desktop**
 - Multiple draggable windows : Google, Notes, Calculator, Command Prompt and an Oggy game
-- **Dock** with a magnify-on-hover effect, floating app labels, and dots that show which apps are open
+- Dock with a magnify-on-hover effect, floating app labels, and dots that show which apps are open
 - Smooth window pop-in animation
 - Live clock in the header with 12h/24h format and an optional seconds display
 
 **Customize widget** 
-- Wallpapers: Oggy photo, plus animated **Night**, **Sunny** and **Aurora** gradients
+- Wallpapers: Oggy photo, plus animated Night, Sunny and Aurora gradients
 - Upload your own wallpaper
 - Accent colour and glass blur sliders, applied to the whole OS through CSS variables
 - Turn the wallpaper animation on or off, and reset everything to default
@@ -22,7 +22,7 @@ A web-based desktop OS themed around *Oggy and the Cockroaches*, built with plai
 
 **News panel** 
 
-- Open it with the `»` button or by swiping right from the left edge
+- Open it with the >> button or by swiping right from the left edge
 - Headlines for your region (India, US, UK, Australia, Canada), chosen automatically and changeable
 - **Markets tab** with live crypto prices in your local currency
 - Glassmorphic design, loading skeletons and cached results
@@ -41,10 +41,10 @@ A web-based desktop OS themed around *Oggy and the Cockroaches*, built with plai
 ## Tech
 
 Structure :- HTML5 
-Styling :- CSS3: variables, flexbox, grid, `backdrop-filter` (glass effect), transitions, keyframe animations, `clamp()` 
-Logic :- Vanilla JavaScript: DOM events, pointer events (drag and swipe), `fetch`, `FileReader`, `localStorage` 
+Styling :- CSS3: variables, flexbox, grid, backdrop-filter(glass effect), transitions, keyframe animations, clamp()
+Logic :- Vanilla JavaScript: DOM events, pointer events (drag and swipe), fetch, FileReader, localStorage 
 Map :- [Leaflet](https://leafletjs.com/) 
-Data :- GDELT and Google News RSS (news), CoinGecko (crypto), Nominatim (place search) |
+Data :- GDELT and Google News RSS (news), CoinGecko (crypto), Nominatim (place search) 
 
 No frameworks, no build step, and no API keys. Everything runs in the browser.
 ---
